@@ -530,6 +530,102 @@
     color:var(--navy-deep);
   }
 
+  /* ----- Section 8: videos & download ----- */
+  .video-grid{
+    display:grid;
+    gap:18px;
+    grid-template-columns:1fr;
+    max-width:840px;
+    margin:18px 0 30px;
+  }
+  @media(min-width:680px){ .video-grid{grid-template-columns:1fr 1fr;} }
+  .video-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px;
+  }
+  .video-frame{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    border-radius:8px;
+    background:var(--paper-deep);
+    border:1.5px dashed var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .video-frame iframe, .video-frame video{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    border:none; border-radius:8px;
+  }
+  .video-frame .placeholder-label{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:.74rem;
+    color:var(--ink-soft);
+    text-align:center;
+    padding:0 16px;
+    letter-spacing:.04em;
+  }
+  .video-card .vc-num{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:.66rem; color:var(--teal); letter-spacing:.1em; font-weight:700;
+    margin:12px 0 2px;
+  }
+  .video-card .vc-title{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:.92rem; color:var(--navy-deep); font-weight:600; margin-bottom:4px;
+  }
+  .video-card .vc-desc{
+    font-size:.84rem; color:var(--ink-soft); line-height:1.5; margin:0;
+  }
+  .download-card{
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    border-radius:12px;
+    padding:26px 28px;
+    max-width:780px;
+    color:#EFE9D8;
+    box-shadow:var(--shadow);
+    margin:10px 0 30px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+  }
+  .download-card .dc-text .dc-title{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    margin-bottom:4px;
+  }
+  .download-card .dc-text .dc-sub{
+    font-size:.86rem;
+    color:#C9D6E0;
+  }
+  .btn-download{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:.82rem;
+    letter-spacing:.04em;
+    font-weight:600;
+    background:var(--teal);
+    color:#06241F;
+    border:none;
+    padding:13px 22px;
+    border-radius:8px;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    flex-shrink:0;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .btn-download:hover{background:#0AA6A3; transform:translateY(-1px);}
+
   /* scrollbar */
   .sidebar::-webkit-scrollbar{width:7px;}
   .sidebar::-webkit-scrollbar-thumb{background:var(--line); border-radius:8px;}
@@ -611,6 +707,11 @@
       <div class="nav-section-title">7 · Referencias</div>
       <button class="nav-item" data-target="panel-7"><span class="nav-num">7</span> Bibliografía APA 7</button>
     </div>
+
+    <div class="nav-group">
+      <div class="nav-section-title">8 · Recursos complementarios</div>
+      <button class="nav-item" data-target="panel-8"><span class="nav-num">8</span> Videos y descarga</button>
+    </div>
   </nav>
 
   <!-- ===================== MAIN ===================== -->
@@ -649,6 +750,7 @@
         <button class="subcard" data-target="panel-4-1"><div class="sc-num">SECCIÓN 4</div><div class="sc-title">Reflexión ética →</div></button>
         <button class="subcard" data-target="panel-5"><div class="sc-num">SECCIÓN 5</div><div class="sc-title">Uso de IA →</div></button>
         <button class="subcard" data-target="panel-6"><div class="sc-num">SECCIÓN 6</div><div class="sc-title">Conclusión →</div></button>
+        <button class="subcard" data-target="panel-8"><div class="sc-num">SECCIÓN 8</div><div class="sc-title">Videos y descarga →</div></button>
       </div>
     </section>
 
@@ -764,6 +866,14 @@
       <h3>1.5.6 — Aparato urinario</h3>
       <p>El corpúsculo renal y su aparato de filtración —con las fenestraciones del endotelio glomerular, la membrana basal glomerular y los podocitos con sus pedicelos— me mostraron una barrera de una precisión asombrosa, cuya alteración genética (síndrome de Alport) o autoinmunitaria (síndrome de Goodpasture) puede comprometer simultáneamente al riñón y al pulmón. El aparato yuxtaglomerular y el sistema renina-angiotensina-aldosterona conectaron directamente la histología renal con la regulación de la presión arterial.</p>
       <span class="clinic-tag">Síndrome de Alport</span><span class="clinic-tag">Síndrome de Goodpasture</span><span class="clinic-tag">Hipertensión arterial</span><span class="clinic-tag">Nefropatía diabética</span>
+
+      <h3>1.5.7 — Sistema reproductor masculino</h3>
+      <p>En el testículo, las células de Sertoli sostienen y nutren a las células germinales dentro de los túbulos seminíferos y forman la barrera hematotesticular, mientras que las células de Leydig, en el intersticio, producen testosterona bajo el control del eje hipotálamo-hipófisis-gonadal. Seguir la espermatogénesis —espermatogonia, espermatocito primario y secundario, espermátide y espermatozoide— me permitió visualizarla como un proceso continuo y no como fotografías aisladas. En el epidídimo, el epitelio con estereocilios completa la maduración espermática, y en la próstata, distinguir la zona de transición de la zona periférica me dio una base histológica concreta para dos patologías urológicas muy frecuentes en la práctica médica.</p>
+      <span class="clinic-tag">Hiperplasia prostática benigna</span><span class="clinic-tag">Cáncer de próstata</span><span class="clinic-tag">Infertilidad masculina</span>
+
+      <h3>1.5.8 — Sistema reproductor femenino</h3>
+      <p>En el ovario, los folículos —primordial, primario, secundario y de Graaf— producen estrógenos a través de las células de la granulosa y de la teca; tras la ovulación, el cuerpo lúteo secreta progesterona, todo bajo el control del eje hipotálamo-hipófisis-ovario mediante la FSH y la LH. En el útero, el endometrio cambia entre fases proliferativa, secretora y menstrual, conservando siempre una capa basal de reserva. Pero la mayor relevancia clínica para mí estuvo en el cuello uterino: el cambio del epitelio escamoso estratificado del exocérvix al epitelio cilíndrico simple del endocérvix define la zona de transformación, sitio donde se origina la mayoría de los cánceres cervicouterinos asociados al VPH, y por eso el Papanicolaou es una herramienta de tamizaje tan importante en nuestro contexto boliviano.</p>
+      <span class="clinic-tag">Cáncer cervicouterino (VPH)</span><span class="clinic-tag">Tamizaje con Papanicolaou</span><span class="clinic-tag">Quistes ováricos</span>
 
       <div class="panel-footer-nav">
         <button class="pf-btn" data-target="panel-1-4">← Anterior</button>
@@ -1341,6 +1451,68 @@
 
       <div class="panel-footer-nav">
         <button class="pf-btn" data-target="panel-6">← Anterior</button>
+        <button class="pf-btn" data-target="panel-8">Siguiente: Videos y descarga →</button>
+      </div>
+    </section>
+
+    <!-- ============ 8 — VIDEOS Y DESCARGA ============ -->
+    <section class="panel" id="panel-8">
+      <div class="panel-eyebrow"><span class="slide-icon"></span> 8 · Recursos complementarios</div>
+      <h2>Videos explicativos y descarga del portafolio</h2>
+      <p class="panel-sub">Resúmenes en video de cada bloque de sistemas, más el documento completo del portafolio para descargar.</p>
+
+      <h3>Videos explicativos por bloque</h3>
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-frame">
+            <!-- Reemplazar este comentario por el iframe de YouTube/Vimeo o una etiqueta <video> -->
+            <span class="placeholder-label">Pegar aquí el código del video<br>(Aparato Respiratorio)</span>
+          </div>
+          <div class="vc-num">BLOQUE 1</div>
+          <div class="vc-title">Aparato Respiratorio</div>
+          <p class="vc-desc">Porción conductora vs. respiratoria, barrido mucociliar, surfactante y correlaciones clínicas.</p>
+        </div>
+
+        <div class="video-card">
+          <div class="video-frame">
+            <span class="placeholder-label">Pegar aquí el código del video<br>(Sistema Digestivo I, II y III)</span>
+          </div>
+          <div class="vc-num">BLOQUE 2</div>
+          <div class="vc-title">Sistema Digestivo I, II y III</div>
+          <p class="vc-desc">Cavidad bucal, esófago–estómago–intestino, hígado–vesícula–páncreas.</p>
+        </div>
+
+        <div class="video-card">
+          <div class="video-frame">
+            <span class="placeholder-label">Pegar aquí el código del video<br>(Endocrino + Urinario)</span>
+          </div>
+          <div class="vc-num">BLOQUE 3</div>
+          <div class="vc-title">Sistema Endocrino y Aparato Urinario</div>
+          <p class="vc-desc">Ejes de regulación hormonal: hipotálamo-hipófisis, tiroides, suprarrenales y filtración renal.</p>
+        </div>
+
+        <div class="video-card">
+          <div class="video-frame">
+            <span class="placeholder-label">Pegar aquí el código del video<br>(Reproductor Masculino y Femenino)</span>
+          </div>
+          <div class="vc-num">BLOQUE 4</div>
+          <div class="vc-title">Sistema Reproductor Masculino y Femenino</div>
+          <p class="vc-desc">Espermatogénesis y vías masculinas; foliculogénesis, ciclo uterino y zona de transformación.</p>
+        </div>
+      </div>
+
+      <h3>Descarga del portafolio</h3>
+      <div class="download-card">
+        <div class="dc-text">
+          <div class="dc-title">Portafolio Reflexivo Integrador — Histología II</div>
+          <div class="dc-sub">Documento completo en formato Word (.docx)</div>
+        </div>
+        <!-- Reemplazar # por el link real de descarga (Google Drive, OneDrive, etc.) -->
+        <a class="btn-download" href="#" download>⬇ Descargar portafolio</a>
+      </div>
+
+      <div class="panel-footer-nav">
+        <button class="pf-btn" data-target="panel-7">← Anterior</button>
         <button class="pf-btn disabled">Fin del portafolio</button>
       </div>
     </section>
